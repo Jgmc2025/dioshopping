@@ -10,16 +10,16 @@ const Header = () => {
             <Typography variant='h3'>
                 Dio Shopping
             </Typography>
-            <div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
                 <Link to="/">
                     <Button color="black">
-                        <HomeOutlined/>
+                        <HomeOutlined style={{ marginRight: '5px' }}/>
                         Início
                     </Button>
                 </Link>
                 <Link to="/contato">
                     <Button color="black">
-                        <ContactsOutlined/>
+                        <ContactsOutlined style={{ marginRight: '5px' }}/>
                         Contato
                     </Button>
                 </Link>

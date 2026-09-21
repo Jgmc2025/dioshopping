@@ -31,6 +31,7 @@ const Card = ({ product, children }) => {
                 
                 <Button 
                     variant="contained"
+                    className="text-white bg-primary"
                     onClick={()=>dispatch(cartActions.Add(cart, product))}
                 >
                     Adicionar

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Grid, Typography, Button } from '@material-ui/core/';
 import Cart from './Cart';
 import { ContactsOutlined, HomeOutlined } from '@material-ui/icons';
+import Preferences from '../Pages/preferences';
 
 const Header = () => {
     return(
@@ -17,6 +18,7 @@ const Header = () => {
                         Início
                     </Button>
                 </Link>
+                <Preferences />
                 <Link to="/contato">
                     <Button color="black">
                         <ContactsOutlined style={{ marginRight: '5px' }}/>

@@ -24,7 +24,7 @@ const Cart = () => {
             <Button color="black" data-bs-toggle="modal" data-bs-target="#CartModal" style={{ marginRight: '20px' }}>
                 <ShoppingCartOutlined style={{ marginRight: '5px' }}/>
                 Carrinho
-                <span style={{position: "absolute", right: "-15px", top: "-5px", borderRadius: "50%", background: "blue", color: "white", width: "20px"}}>{cart.value}</span>
+                <span style={{position: "absolute", right: "-18px", top: "-5px", borderRadius: "50%", background: "blue", color: "white", width: "23px"}}>{cart.value}</span>
             </Button>
 
             {/* Modal */}

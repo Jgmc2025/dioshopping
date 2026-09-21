@@ -21,6 +21,27 @@ const Preferences = () => {
                                 <CloseOutlined/>
                             </button>
                         </div>
+                        <div style={{display: "flex", flexDirection: "row", margin: "20px", justifyContent: "space-between"}}>
+                            <div style={{display: "flex", flexDirection: "row", gap: "15px",}}>
+                                <h6 className="modal-title">Tema:</h6>
+                                <select>
+                                    <option>Claro</option>
+                                    <option>Escuro</option>
+                                </select>
+                            </div>
+                            <div style={{display: "flex", flexDirection: "row", gap: "15px",}}>
+                                <h6 className="modal-title">Categorias:</h6>
+                                <select>
+                                    <option>Direita</option>
+                                    <option>Esquerda</option>
+                                    <option>Oculta</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="modal-footer">
+                            <button className="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button className="btn btn-primary" data-bs-dismiss="modal">Salvar</button>
+                        </div>
                     </div>
                 </div>
             </div>

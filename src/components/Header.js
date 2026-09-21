@@ -7,9 +7,14 @@ import Preferences from '../Pages/preferences';
 
 const Header = () => {
     return(
-        <Grid container direction="row" justify="space-between" alignItems="center" xs={12} style={{marginBottom: "50px", marginTop: "15px"}}>
-            <Typography variant='h3'>
-                Dio Shopping
+        <Grid container direction="row" justify="space-between" alignItems="center" xs={12} style={{marginBottom: "50px", borderBottom: "1px solid", height: 90}}>
+            <Typography variant='h3' style={{fontFamily: "Archivo Black", fontWeight: "bold"}}>
+                <span style={{color: "blue"}}>
+                    DIO
+                </span>
+                <span style={{fontStyle: "italic"}}>
+                    SHOPPING
+                </span>
             </Typography>
             <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
                 <Link to="/">

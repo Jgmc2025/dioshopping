@@ -77,7 +77,7 @@ const Cart = () => {
                         </div>
 
                     <div className="modal-footer" justify="space-between">
-                        <button className="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <button className="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                         <Link to="/pagamento" className="btn btn-primary" data-bs-dismiss="modal">Comprar</Link>
                     </div>
                     </div>

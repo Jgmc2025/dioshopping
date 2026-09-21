@@ -28,7 +28,7 @@ const Cart = () => {
             </Button>
 
             {/* Modal */}
-            <div className="modal fade" id="CartModal" tabIndex="-1" aria-labelledby="CartModalLabel" aria-hidden="true">
+            <div className="modal fade" id="CartModal" tabIndex="-1" aria-labelledby="CartModalLabel" aria-hidden="true" style={{marginTop: "80px"}}>
                 <div className="modal-dialog">
                     <div className="modal-content">
                     <div className="modal-header">

@@ -53,29 +53,28 @@ const Contatos = () => {
 
     return(
         <>
-            <Grid container direction="row" xs={3}>
-                <TextField id="name" label="Nome" value={author} onChange={(event)=>{setAuthor(event.target.value)}} fullWidth/>
-                <TextField id="message" label="Mensagem" value={content} onChange={(event)=>{setContent(event.target.value)}} fullWidth/>
-            </Grid>
+            <div style={{display: "flex", flexDirection: "column", paddingTop: "150px", paddingBottom: "30px", alignItems: "center", gap: "30px"}}>
+                {validator && 
+                    <div className="alert alert-warning alert-dismissible fade show mt-2" role="alert">
+                        <strong>Por favor preencha todos os campos!</strong>
+                        <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                }
+                {success && 
+                    <div className="alert alert-success alert-dismissible fade show mt-2" role="alert" style={{paddingRight: "20px"}}>
+                        <strong>Mensagem foi enviada!</strong>
+                    </div>
+                }
+                <Grid container direction="row" xs={3}>
+                    <TextField id="name" label="Nome" value={author} onChange={(event)=>{setAuthor(event.target.value)}} fullWidth/>
+                    <TextField id="message" label="Mensagem" value={content} onChange={(event)=>{setContent(event.target.value)}} fullWidth/>
+                </Grid>
+                <Button onClick={sendMessage} className="mt-2" variant="contained" color="primary" style={{height: "40px"}}>
+                    Enviar
+                </Button>
+            </div>
 
-            {validator && 
-                <div className="alert alert-warning alert-dismissible fade show mt-2" role="alert">
-                    <strong>Por favor preencha todos os campos!</strong>
-                    <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            }
-
-            {success && 
-                <div className="alert alert-success alert-dismissible fade show mt-2" role="alert">
-                    <strong>Mensagem foi enviada</strong>
-                </div>
-            }
-
-            <Button onClick={sendMessage} className="mt-2" variant="contained" color="primary">
-                Enviar
-            </Button>
-
-            <Grid container spacing={2}>
+            <Grid container spacing={2} style={{paddingBottom: "150px"}}>
                 {message.map((content) => {
                     return(
                         <Grid item xs={3} key={content.id}>

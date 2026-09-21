@@ -12,7 +12,7 @@ const Preferences = () => {
             </Button>
 
             {/* Modal */}
-            <div className="modal fade" id="PreferenceModal" tabIndex="-1" aria-labelledby="PreferenceModalLabel" aria-hidden="true">
+            <div className="modal fade" id="PreferenceModal" tabIndex="-1" aria-labelledby="PreferenceModalLabel" aria-hidden="true" style={{marginTop: "80px"}}>
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">

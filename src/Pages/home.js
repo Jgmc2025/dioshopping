@@ -45,7 +45,7 @@ const HomePage = () => {
     }
 
     return(
-        <Grid container spacing={3} className={classes.root}>
+        <Grid container spacing={3} className={classes.root} style={{paddingTop: "150px", paddingBottom: "150px"}}>
             <Grid item xs={2}>
                 <Paper className={classes.paper}>
                     <Typography variant='h5'>

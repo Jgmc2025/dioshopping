@@ -2,12 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Grid, Typography, Button } from '@material-ui/core/';
 import Cart from './Cart';
-import { ContactsOutlined, HomeOutlined } from '@material-ui/icons';
+import { ArrowRightOutlined, ContactsOutlined, HomeOutlined } from '@material-ui/icons';
 import Preferences from '../Pages/preferences';
 
 const Header = () => {
     return(
-        <Grid container direction="row" justify="space-between" alignItems="center" xs={12} style={{marginBottom: "50px", borderBottom: "1px solid", height: 90}}>
+        <Grid container direction="row" justify="space-between" alignItems="center" xs={12} 
+        style={{marginBottom: "50px", left: 0, top: 0, paddingLeft: "40px", paddingRight: "40px", borderBottom: "1px solid", height: 90, position: "fixed",
+        zIndex: 2, background: "white"}}>
             <Typography variant='h3' style={{fontFamily: "Archivo Black", fontWeight: "bold"}}>
                 <span style={{color: "blue"}}>
                     DIO
@@ -31,6 +33,14 @@ const Header = () => {
                     </Button>
                 </Link>
                 <Cart />
+            </div>
+            <div>
+                <Link to="/login">
+                    <Button color="black">
+                        <ArrowRightOutlined style={{ marginRight: '5px' }}/>
+                        Login
+                    </Button>
+                </Link>
             </div>
         </Grid>
     )

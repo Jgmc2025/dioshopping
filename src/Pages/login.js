@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { TextField, Button, Typography } from '@material-ui/core/';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [error, setError] = useState(false);
@@ -11,8 +12,22 @@ const Login = () => {
         if (email.length <= 0 || senha.length <= 0) {
             return setError(true);
         }
-        // TODO: substituir por chamada real de autenticação (fetch/API)
-        console.log('Login com:', { email });
+
+        fetch('http://localhost:5000/login', {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, senha })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                return setError(true);
+            }
+            localStorage.setItem('dioshopping: token', data.token);
+            localStorage.setItem('dioshopping: user', JSON.stringify(data.user));
+            navigate('/');
+        })
+        .catch(() => setError(true));
     }
 
     const handleKeyPress = (event) => {

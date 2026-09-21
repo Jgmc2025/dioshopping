@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { TextField, Button, Typography } from '@material-ui/core/';
 
 const Cadastro = () => {
+    const navigate = useNavigate();
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
@@ -20,8 +21,19 @@ const Cadastro = () => {
         if (senha.length < 6) {
             return setError('A senha deve ter no mínimo 6 caracteres!');
         }
-        // TODO: substituir por chamada real de cadastro (fetch/API)
-        console.log('Cadastro com:', { nome, email, senha });
+        fetch('http://localhost:5000/users', {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ nome, email, senha })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                return setError(data.error);
+            }
+            navigate('/login');
+        })
+        .catch(() => setError('Erro ao cadastrar. Tente novamente.'));
     }
 
     const handleKeyPress = (event) => {

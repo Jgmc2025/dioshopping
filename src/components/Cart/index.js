@@ -1,6 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import cartActions from '../store/actions/cart';
+import { Link } from 'react-router-dom';
+import { DeleteOutline, ShoppingCartOutlined } from '@material-ui/icons';
+import { Button } from '@material-ui/core';
 
 const Cart = () => {
     const cart = useSelector(state => state.cart)
@@ -18,12 +21,10 @@ const Cart = () => {
 
     return(
         <>
-            <button type="button" className="btn btn-info" data-bs-toggle="modal" data-bs-target="#CartModal">
-                <span><i className="fas fa-shopping-cart"></i></span>
-                <span className="badge rounded-pill bg-info text-dark">
-                    {cart.value}
-                </span>
-            </button>
+            <Button color="black" data-bs-toggle="modal" data-bs-target="#CartModal">
+                <ShoppingCartOutlined/>
+                Carrinho
+            </Button>
 
             {/* Modal */}
             <div className="modal fade" id="CartModal" tabIndex="-1" aria-labelledby="CartModalLabel" aria-hidden="true">
@@ -53,7 +54,7 @@ const Cart = () => {
                             {cart.Cart.map( item =>{
                                 return(
                                     <tr key={item.id}>
-                                        <th><button onClick={()=>dispatch(cartActions.DeleteItem(cart, item))} className="badge bg-danger"><i className="fas fa-window-close"></i></button></th>
+                                        <th><button onClick={()=>dispatch(cartActions.DeleteItem(cart, item))}><DeleteOutline/></button></th>
                                         <th><img className="img-fluid img-thumbnail" src={item.image} alt={item.Name} width="50px"/></th>
                                         <th><span className="badge badge-pill bg-warning">
                                             {item.quantity}
@@ -74,8 +75,9 @@ const Cart = () => {
                         </table>
                         </div>
 
-                    <div className="modal-footer">
-                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <div className="modal-footer" justify="space-between">
+                        <button className="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <Link to="/pagamento" className="btn btn-secondary" data-bs-dismiss="modal">Comprar</Link>
                     </div>
                     </div>
                 </div>

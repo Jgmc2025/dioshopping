@@ -75,17 +75,21 @@ const Contatos = () => {
                 Sent
             </Button>
 
-            {message.map((content) => {
-                return(
-                    <div className="card mt-2" key={content.id}>
-                        <div className="card-body">
-                            <h5 className="card-title">{content.email}</h5>
-                            <p className="card-text">{content.message}</p>
-                            <p className="card-text"><small className="text-muted">{content.created_at}</small></p>
-                        </div>
-                    </div>
-                )
-            } )}
+            <Grid container spacing={2}>
+                {message.map((content) => {
+                    return(
+                        <Grid item xs={3} key={content.id}>
+                            <div className='card mt-2'>
+                                <div className="card-body">
+                                    <h5 className="card-title">{content.email}</h5>
+                                    <p className="card-text">{content.message}</p>
+                                    <p className="card-text"><small className="text-muted">{content.created_at}</small></p>
+                                </div>
+                            </div>
+                        </Grid>
+                    )
+                } )}
+            </Grid>
         </>
     )
 }

@@ -73,7 +73,9 @@ const Contatos = () => {
 
     return(
         <>
-            <div style={{display: "flex", flexDirection: "column", paddingTop: "150px", paddingBottom: "30px", alignItems: "center", gap: "30px"}}>
+            <div style={{display: "flex", flexDirection: "column", paddingTop: "150px", paddingBottom: "30px",
+                alignItems: "center", gap: "30px", border: "1px solid", borderColor: "#ddd", borderRadius: "10px",
+                boxSizing: "border-box", boxShadow: "0px 1px 8px rgba(0,0,0,0.08)"}}>
                 {validator && 
                     <div className="alert alert-warning alert-dismissible fade show mt-2" role="alert">
                         <strong>Por favor preencha todos os campos!</strong>

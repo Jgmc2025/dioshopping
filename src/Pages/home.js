@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Paper, Grid, Typography, List, makeStyles } from '@material-ui/core/';
+import { Grid, Typography, List, makeStyles } from '@material-ui/core/';
 import Item from '../components/Item';
 import Card from '../components/Card';
 
@@ -8,11 +8,8 @@ const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
       marginTop: '5px',
-    },
-    paper: {
-      padding: theme.spacing(2),
-      textAlign: 'center'
-    },
+      gap: "15px"
+    }
   }));
 
 const HomePage = () => {
@@ -46,25 +43,24 @@ const HomePage = () => {
 
     return(
         <Grid container spacing={3} className={classes.root} style={{paddingTop: "150px", paddingBottom: "150px"}}>
-            <Grid item xs={2}>
-                <Paper className={classes.paper}>
-                    <Typography variant='h5'>
-                        Categorias
-                    </Typography>
-                    <List>
-                        {category.map(
-                            category => {
-                                return (
-                                    <Item
-                                        key = {category.id} 
-                                        name= {category.name}
-                                        details={count[category.name]}
-                                    />
-                                )
-                            }
-                        )}
-                    </List>
-                </Paper>
+            <Grid item xs={2} style={{border: "1px solid", borderColor: "#ddd", borderRadius: "10px",
+                boxSizing: "border-box", boxShadow: "0px 1px 8px rgba(0,0,0,0.08)", height: "450px", margin: "30px"}}>
+                <Typography variant='h5' style={{margin: "15px"}}>
+                    Categorias
+                </Typography>
+                <List>
+                    {category.map(
+                        category => {
+                            return (
+                                <Item
+                                    key = {category.id} 
+                                    name= {category.name}
+                                    details={count[category.name]}
+                                />
+                            )
+                        }
+                    )}
+                </List>
             </Grid>
             <Grid container xs={9} spacing={3} className={classes.root}>
                 {products.map(item => {

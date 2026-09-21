@@ -31,7 +31,7 @@ const Login = () => {
                 textAlign: "center",
                 padding: "40px 30px",
                 boxSizing: "border-box",
-                boxShadow: "0px 2px 10px rgba(0,0,0,0.08)"
+                boxShadow: "0px 1px 8px rgba(0,0,0,0.08)"
             }}>
                 <Typography variant="h4" style={{ fontFamily: "Archivo Black", marginBottom: "30px" }}>
                     <span style={{ color: "blue" }}>DIO</span>

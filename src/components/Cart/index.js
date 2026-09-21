@@ -22,7 +22,7 @@ const Cart = () => {
 
     const modalContent = (
         <div className="modal fade" id="CartModal" tabIndex="-1" aria-labelledby="CartModalLabel" aria-hidden="true">
-            <div className="modal-dialog" style={{ marginTop: "80px" }}>
+            <div className="modal-dialog" style={{ marginTop: "120px" }}>
                 <div className="modal-content">
                 <div className="modal-header">
                 <h5 className="modal-title" id="CartModalLabel">Meu Carrinho</h5>

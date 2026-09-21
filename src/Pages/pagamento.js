@@ -4,7 +4,7 @@ const Pagamentos = () => {
     return(
         <>
             <Button className="mt-2" variant="contained" color="primary">
-                Sent
+                Pagamento
             </Button>
         </>
     )

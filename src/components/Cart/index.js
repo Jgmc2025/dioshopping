@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import cartActions from '../store/actions/cart';
 import { Link } from 'react-router-dom';
-import { DeleteOutline, ShoppingCartOutlined } from '@material-ui/icons';
+import { AddCircleOutline, CloseOutlined, DeleteOutline, RemoveCircleOutline, ShoppingCartOutlined } from '@material-ui/icons';
 import { Button } from '@material-ui/core';
 
 const Cart = () => {
@@ -32,8 +32,8 @@ const Cart = () => {
                     <div className="modal-content">
                     <div className="modal-header">
                     <h5 className="modal-title" id="CartModalLabel">Meu Carrinho</h5>
-                        <button type="button" className="close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                        <button type="button" data-bs-dismiss="modal" style={{border: "none", background: "none"}}>
+                            <CloseOutlined/>
                         </button>
                     </div>
 
@@ -54,14 +54,14 @@ const Cart = () => {
                             {cart.Cart.map( item =>{
                                 return(
                                     <tr key={item.id}>
-                                        <th><button onClick={()=>dispatch(cartActions.DeleteItem(cart, item))}><DeleteOutline/></button></th>
+                                        <th><button onClick={()=>dispatch(cartActions.DeleteItem(cart, item))} style={{border: "none", background: "none"}}><DeleteOutline/></button></th>
                                         <th><img className="img-fluid img-thumbnail" src={item.image} alt={item.Name} width="50px"/></th>
-                                        <th><span className="badge badge-pill bg-warning">
+                                        <th><span className="badge badge-pill" style={{background: "blue"}}>
                                             {item.quantity}
                                         </span></th>
                                         <th>R$ {item.price.toFixed(2)}</th>
-                                        <th><button onClick={()=>dispatch(cartActions.AddItem(cart, item))} className="badge badge-pill bg-primary"><i className="fas fa-plus"></i></button></th>
-                                        <th><button onClick={()=>dispatch(cartActions.RemoveItem(cart, item))} className="badge badge-pill bg-danger"><i className="fas fa-minus"></i></button></th>
+                                        <th><button onClick={()=>dispatch(cartActions.AddItem(cart, item))} style={{border: "none", background: "none", color: "blue"}}><AddCircleOutline/></button></th>
+                                        <th><button onClick={()=>dispatch(cartActions.RemoveItem(cart, item))} style={{border: "none", background: "none", color: "red"}}><RemoveCircleOutline/></button></th>
                                         <th>R$ {(item.price * item.quantity).toFixed(2)}</th>
                                     </tr>
                                 )
@@ -77,7 +77,7 @@ const Cart = () => {
 
                     <div className="modal-footer" justify="space-between">
                         <button className="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                        <Link to="/pagamento" className="btn btn-secondary" data-bs-dismiss="modal">Comprar</Link>
+                        <Link to="/pagamento" className="btn btn-primary" data-bs-dismiss="modal">Comprar</Link>
                     </div>
                     </div>
                 </div>

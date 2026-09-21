@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Grid, Typography, Button } from '@material-ui/core/';
 import Cart from './Cart';
-import { ContactPhoneOutlined, HomeOutlined } from '@material-ui/icons';
+import { ContactsOutlined, HomeOutlined } from '@material-ui/icons';
 
 const Header = () => {
     return(
@@ -19,7 +19,7 @@ const Header = () => {
                 </Link>
                 <Link to="/contato">
                     <Button color="black">
-                        <ContactPhoneOutlined/>
+                        <ContactsOutlined/>
                         Contato
                     </Button>
                 </Link>

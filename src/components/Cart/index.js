@@ -2,13 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import cartActions from '../store/actions/cart';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { AddCircleOutline, CloseOutlined, DeleteOutline, RemoveCircleOutline, ShoppingCartOutlined } from '@material-ui/icons';
 import { Button } from '@material-ui/core';
 
 const Cart = () => {
     const cart = useSelector(state => state.cart)
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     let totalPrice = 0;
 
@@ -18,6 +19,10 @@ const Cart = () => {
 
     if(cart.value > 0){
         localStorage.setItem('dioshopping: cart', JSON.stringify(cart))
+    }
+
+    const handleComprar = () => {
+        navigate('/pagamento');
     }
 
     const modalContent = (
@@ -71,7 +76,7 @@ const Cart = () => {
 
                 <div className="modal-footer" justify="space-between">
                     <button className="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <Link to="/pagamento" className="btn btn-primary" data-bs-dismiss="modal">Comprar</Link>
+                    <button className="btn btn-primary" data-bs-dismiss="modal" onClick={handleComprar}>Comprar</button>
                 </div>
                 </div>
             </div>

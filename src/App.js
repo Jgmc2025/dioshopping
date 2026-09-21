@@ -7,7 +7,7 @@ import Header from './components/Header';
 
 const AppContent = () => {
   const location = useLocation()
-  const isLoginOrRegister = (location.pathname === "/login" || location.pathname === "/cadastro")
+  const isLoginOrRegister = (location.pathname === "/login" || location.pathname === "/cadastro" || location.pathname === "/pagamento")
   return(
     <Container maxWidth="xl">
       {!isLoginOrRegister && <Header />}

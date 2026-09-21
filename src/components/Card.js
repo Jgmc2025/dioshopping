@@ -1,11 +1,17 @@
 import React from 'react';
 import { Grid, Typography, Button } from '@material-ui/core/';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import cartActions from './store/actions/cart';
 
 const Card = ({ product, children }) => {
     const cart = useSelector( state => state.cart.value )
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const handleComprar = () => {
+        navigate('/pagamento', { state: { produtoAvulso: product } });
+    }
 
     return(
         <Grid item xs={3} style={{border: "1px solid", textAlign: "center", borderRadius: "10px", 
@@ -25,7 +31,7 @@ const Card = ({ product, children }) => {
                     <Button 
                         variant="contained"
                         className="text-white bg-secondary"
-                        onClick={()=>dispatch(cartActions.Add(cart, product))}
+                        onClick={handleComprar}
                         style={{marginRight: '5px'}}
                     >
                         Comprar

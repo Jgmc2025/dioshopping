@@ -61,7 +61,7 @@ const Login = () => {
 
                 {error &&
                     <div className="alert alert-warning" role="alert" style={{ marginBottom: "20px" }}>
-                        Preencha email e senha para continuar!
+                        Email ou Senha Incorretos!
                     </div>
                 }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Grid, Typography, Button } from '@material-ui/core/';
 import Cart from './Cart';
-import { ArrowRightOutlined, ContactsOutlined, HomeOutlined } from '@material-ui/icons';
+import { ContactsOutlined, HomeOutlined } from '@material-ui/icons';
 
 const Header = () => {
     return(
@@ -32,10 +32,9 @@ const Header = () => {
                 </Link>
                 <Cart />
             </div>
-            <div>
+            <div style={{background: "blue", borderRadius: "5px"}}>
                 <Link to="/login">
-                    <Button color="black">
-                        <ArrowRightOutlined style={{ marginRight: '5px' }}/>
+                    <Button style={{color: "white"}}>
                         Login
                     </Button>
                 </Link>

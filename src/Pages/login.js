@@ -32,11 +32,13 @@ const Login = () => {
                 padding: "40px 30px",
                 boxSizing: "border-box",
                 boxShadow: "0px 1px 8px rgba(0,0,0,0.08)"
-            }}>
-                <Typography variant="h4" style={{ fontFamily: "Archivo Black", marginBottom: "30px" }}>
-                    <span style={{ color: "blue" }}>DIO</span>
-                    <span style={{ fontStyle: "italic" }}>SHOPPING</span>
-                </Typography>
+            }}> 
+                <Link to="/" style={{textDecoration: "none"}}>
+                    <Typography variant="h4" style={{ fontFamily: "Archivo Black", marginBottom: "30px" }}>
+                        <span style={{ color: "blue" }}>DIO</span>
+                        <span style={{ fontStyle: "italic", color: "black" }}>SHOPPING</span>
+                    </Typography>
+                </Link>
 
                 <Typography variant="h5" style={{ marginBottom: "25px" }}>
                     Login

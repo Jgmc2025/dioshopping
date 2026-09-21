@@ -8,7 +8,8 @@ const Card = ({ product, children }) => {
     const dispatch = useDispatch();
 
     return(
-        <Grid item xs={3} style={{border: "1px solid", textAlign: "center", borderRadius: "10px", boxSizing: "border-box", boxShadow: "0px 1px 8px rgba(0,0,0,0.08)", borderColor: "#ddd",}}>
+        <Grid item xs={3} style={{border: "1px solid", textAlign: "center", borderRadius: "10px", 
+            boxSizing: "border-box", boxShadow: "0px 1px 8px rgba(0,0,0,0.08)", borderColor: "#ddd",}}>
             <Grid container direction='column'>
                 <Grid item>
                 <img width="140px" src={product.image} alt={product.name_product}/>

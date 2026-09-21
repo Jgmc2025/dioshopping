@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Grid, Button, TextField } from '@material-ui/core/';
+import { DeleteOutline } from '@material-ui/icons';
 
 const Contatos = () => {
 
@@ -49,7 +50,26 @@ const Contatos = () => {
         setContent('');
         
         console.log(content)
-    }  
+    }
+
+    const deleteMessage = (messageToDelete) => {
+        fetch(url, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                id: messageToDelete.id
+            })
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            setRender(!render);
+        })
+        .catch((error) => {
+            console.error("Erro ao deletar mensagem:", error);
+        })
+    }
 
     return(
         <>
@@ -79,10 +99,13 @@ const Contatos = () => {
                     return(
                         <Grid item xs={3} key={content.id}>
                             <div className='card mt-2'>
-                                <div className="card-body">
-                                    <h5 className="card-title">{content.email}</h5>
-                                    <p className="card-text">{content.message}</p>
-                                    <p className="card-text"><small className="text-muted">{content.created_at}</small></p>
+                                <div className="card-body" style={{display: "flex", flexDirection: "row"}}>
+                                    <div>
+                                        <h5 className="card-title">{content.email}</h5>
+                                        <p className="card-text">{content.message}</p>
+                                        <p className="card-text"><small className="text-muted">{content.created_at}</small></p>
+                                    </div>
+                                    <button onClick={() => deleteMessage(content)} style={{border: "none", background: "none", position: "absolute", right: "10px"}}><DeleteOutline style={{width: "30px", height: "30px"}}/></button>
                                 </div>
                             </div>
                         </Grid>

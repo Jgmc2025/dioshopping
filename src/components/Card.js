@@ -28,14 +28,24 @@ const Card = ({ product, children }) => {
                         R$ {product.price.toFixed(2)}
                     </Typography>
                     </Grid>
-                
-                <Button 
-                    variant="contained"
-                    className="text-white bg-primary"
-                    onClick={()=>dispatch(cartActions.Add(cart, product))}
-                >
-                    Adicionar
-                </Button>
+
+                    <div style={{padding: "10px"}}>
+                        <Button 
+                            variant="contained"
+                            className="text-white bg-secondary"
+                            onClick={()=>dispatch(cartActions.Add(cart, product))}
+                            style={{marginRight: '5px'}}
+                        >
+                            Comprar
+                        </Button>
+                        <Button 
+                            variant="contained"
+                            className="text-white bg-primary"
+                            onClick={()=>dispatch(cartActions.Add(cart, product))}
+                        >
+                            Adicionar
+                        </Button>
+                    </div>
                 </Grid>
             </Paper>
         </Grid>

@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Grid, Typography, Button } from '@material-ui/core/';
 import Cart from './Cart';
 import { CloseOutlined, ContactsOutlined, HomeOutlined } from '@material-ui/icons';
+import Historico from '../Pages/historico';
 
 const Header = () => {
     const navigate = useNavigate();
@@ -103,6 +104,7 @@ const Header = () => {
                     </Button>
                 </Link>
                 <Cart />
+                <Historico />
             </div>
 
             {user ? (

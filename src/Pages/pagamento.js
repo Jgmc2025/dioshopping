@@ -50,6 +50,15 @@ const Pagamentos = () => {
             setProcessando(false);
             setPagamentoConcluido(true);
 
+            const historicoAtual = JSON.parse(localStorage.getItem('dioshopping: historico')) || [];
+            const novoPagamento = {
+                id: Date.now(),
+                data: new Date().toLocaleString('pt-BR'),
+                itens: produtoAvulso ? [produtoAvulso] : cart.Cart,
+                total: totalPrice
+            };
+            localStorage.setItem('dioshopping: historico', JSON.stringify([novoPagamento, ...historicoAtual]));
+
             if (produtoAvulso) {
                 const itemNoCarrinho = cart.Cart.find(item => item.id === produtoAvulso.id);
                 if (itemNoCarrinho) {
@@ -123,7 +132,7 @@ const Pagamentos = () => {
                     textAlign: "center"
                 }}>
                     <Typography variant="body2" style={{ color: cores.escuro, fontWeight: "bold" }}>
-                        <AddAlertOutlined /> Ambiente de teste — os dados abaixo são fictícios e nenhum valor real será cobrado.
+                        <AddAlertOutlined /> Ambiente de teste: Os dados abaixo são fictícios e nenhum valor real será cobrado.
                     </Typography>
                 </div>
 
@@ -238,7 +247,7 @@ const Pagamentos = () => {
                         onMouseOver={(e) => { if (!processando) e.target.style.background = cores.claro }}
                         onMouseOut={(e) => { if (!processando) e.target.style.background = cores.principal }}
                     >
-                        {processando ? "Processando..." : `Finalizar Pagamento — R$ ${totalPrice.toFixed(2)}`}
+                        {processando ? "Processando..." : `Finalizar Pagamento: R$ ${totalPrice.toFixed(2)}`}
                     </Button>
 
                     <Typography variant="caption" style={{ textAlign: "center", color: "#888" }}>

@@ -69,10 +69,10 @@ const Header = () => {
                 <Button
                     onClick={handleLogout}
                     variant="contained"
-                    color="secondary"
                     fullWidth
+                    style={{background: "#FF7A00", color: "#FFD9B3"}}
                 >
-                    Sair
+                    <b>Sair</b>
                 </Button>
             </div>
         </div>
@@ -83,7 +83,7 @@ const Header = () => {
         style={{marginBottom: "50px", left: 0, top: 0, paddingLeft: "40px", paddingRight: "40px", borderBottom: "1px solid", height: 90, position: "fixed",
         zIndex: 2, background: "white"}}>
             <Typography variant='h3' style={{fontFamily: "Archivo Black", fontWeight: "bold"}}>
-                <span style={{color: "blue"}}>
+                <span style={{color: "#FF7A00"}}>
                     DIO
                 </span>
                 <span style={{fontStyle: "italic"}}>
@@ -103,8 +103,8 @@ const Header = () => {
                         Contato
                     </Button>
                 </Link>
-                <Cart />
                 <Historico />
+                <Cart />
             </div>
 
             {user ? (
@@ -112,7 +112,7 @@ const Header = () => {
                     <Button
                         onClick={() => setModalAberto(true)}
                         style={{
-                            background: "blue",
+                            background: "#FF7A00",
                             color: "white",
                             borderRadius: "50%",
                             minWidth: "45px",
@@ -126,7 +126,7 @@ const Header = () => {
                     {ReactDOM.createPortal(modalContent, document.body)}
                 </>
             ) : (
-                <div style={{background: "blue", borderRadius: "5px"}}>
+                <div style={{background: "#FF7A00", borderRadius: "5px"}}>
                     <Link to="/login">
                         <Button style={{color: "white"}}>
                             Login

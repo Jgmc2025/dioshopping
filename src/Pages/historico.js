@@ -47,7 +47,7 @@ const Historico = () => {
                     </div>
 
                     <div className="modal-footer">
-                        <button className="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <button className="btn" data-bs-dismiss="modal" style={{color: "#FF7A00", background: "#FFD9B3"}}><b>Fechar</b></button>
                     </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@ const Historico = () => {
 
     return(
         <>
-            <Button color="black" data-bs-toggle="modal" data-bs-target="#HistoricoModal" style={{ marginRight: '20px' }}>
+            <Button color="black" data-bs-toggle="modal" data-bs-target="#HistoricoModal">
                 <HistoryOutlined style={{ marginRight: '5px' }}/>
                 Histórico
             </Button>

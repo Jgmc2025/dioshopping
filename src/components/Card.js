@@ -30,15 +30,15 @@ const Card = ({ product, children }) => {
                 <div style={{padding: "10px"}}>
                     <Button 
                         variant="contained"
-                        className="text-white bg-secondary"
                         onClick={handleComprar}
-                        style={{marginRight: '5px'}}
+                        style={{marginRight: '5px', background: "#FFD9B3", color: "#FF7A00"}}
                     >
                         Comprar
                     </Button>
                     <Button 
                         variant="contained"
-                        className="text-white bg-primary"
+                        className="text-white"
+                        style={{background: "#FF7A00"}}
                         onClick={()=>dispatch(cartActions.Add(cart, product))}
                     >
                         Adicionar

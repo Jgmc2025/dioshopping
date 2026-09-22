@@ -55,11 +55,11 @@ const Cart = () => {
                                 <tr key={item.id}>
                                     <th><button onClick={()=>dispatch(cartActions.DeleteItem(cart, item))} style={{border: "none", background: "none"}}><DeleteOutline/></button></th>
                                     <th><img className="img-fluid img-thumbnail" src={item.image} alt={item.Name} width="50px"/></th>
-                                    <th><span className="badge badge-pill" style={{background: "blue"}}>
+                                    <th><span className="badge badge-pill" style={{background: "#FF7A00"}}>
                                         {item.quantity}
                                     </span></th>
                                     <th>R$ {item.price.toFixed(2)}</th>
-                                    <th><button onClick={()=>dispatch(cartActions.AddItem(cart, item))} style={{border: "none", background: "none", color: "blue"}}><AddCircleOutline/></button></th>
+                                    <th><button onClick={()=>dispatch(cartActions.AddItem(cart, item))} style={{border: "none", background: "none", color: "#FF7A00"}}><AddCircleOutline/></button></th>
                                     <th><button onClick={()=>dispatch(cartActions.RemoveItem(cart, item))} style={{border: "none", background: "none", color: "red"}}><RemoveCircleOutline/></button></th>
                                     <th>R$ {(item.price * item.quantity).toFixed(2)}</th>
                                 </tr>
@@ -75,8 +75,8 @@ const Cart = () => {
                     </div>
 
                 <div className="modal-footer" justify="space-between">
-                    <button className="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button className="btn btn-primary" data-bs-dismiss="modal" onClick={handleComprar}>Comprar</button>
+                    <button className="btn" data-bs-dismiss="modal" style={{background: "#FFD9B3", color: "#FF7A00"}}><b>Cancelar</b></button>
+                    <button className="btn" data-bs-dismiss="modal" onClick={handleComprar} style={{background: "#FF7A00", color: "white"}}><b>Comprar</b></button>
                 </div>
                 </div>
             </div>
@@ -88,7 +88,7 @@ const Cart = () => {
             <Button color="black" data-bs-toggle="modal" data-bs-target="#CartModal" style={{ marginRight: '20px' }}>
                 <ShoppingCartOutlined style={{ marginRight: '5px' }}/>
                 Carrinho
-                <span style={{position: "absolute", right: "-18px", top: "-5px", borderRadius: "50%", background: "blue", color: "white", width: "23px"}}>{cart.value}</span>
+                <span style={{position: "absolute", right: "-18px", top: "-5px", borderRadius: "50%", background: "#FF7A00", color: "white", width: "23px"}}>{cart.value}</span>
             </Button>
 
             {ReactDOM.createPortal(modalContent, document.body)}

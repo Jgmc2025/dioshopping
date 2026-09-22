@@ -136,14 +136,6 @@ const Pagamentos = () => {
                     </Typography>
                 </div>
 
-                {produtoAvulso &&
-                    <div style={{ padding: "15px 30px 0", textAlign: "center" }}>
-                        <Typography variant="body2" style={{ color: "#666" }}>
-                            Comprando: <strong>{produtoAvulso.name_product}</strong>
-                        </Typography>
-                    </div>
-                }
-
                 <div style={{
                     margin: "30px",
                     padding: "25px",

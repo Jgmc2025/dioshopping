@@ -50,7 +50,7 @@ const Login = () => {
             }}> 
                 <Link to="/" style={{textDecoration: "none"}}>
                     <Typography variant="h4" style={{ fontFamily: "Archivo Black", marginBottom: "30px" }}>
-                        <span style={{ color: "blue" }}>DIO</span>
+                        <span style={{ color: "#FF7A00" }}>DIO</span>
                         <span style={{ fontStyle: "italic", color: "black" }}>SHOPPING</span>
                     </Typography>
                 </Link>
@@ -89,16 +89,15 @@ const Login = () => {
                 <Button
                     onClick={handleLogin}
                     variant="contained"
-                    color="primary"
                     fullWidth
-                    style={{ height: "45px" }}
+                    style={{ height: "45px", background: "#FF7A00", color: "white" }}
                 >
                     Entrar
                 </Button>
             </div>
             <Typography style={{ marginTop: "20px" }}>
                 Não tem uma conta?{' '}
-                <Link to="/cadastro" style={{ color: "blue", textDecoration: "none" }}>
+                <Link to="/cadastro" style={{ color: "#FF7A00", textDecoration: "none" }}>
                     Cadastre-se
                 </Link>
             </Typography>

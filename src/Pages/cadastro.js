@@ -56,7 +56,7 @@ const Cadastro = () => {
             }}>
                 <Link to="/" style={{textDecoration: "none"}}>
                     <Typography variant="h4" style={{ fontFamily: "Archivo Black", marginBottom: "30px" }}>
-                        <span style={{ color: "blue" }}>DIO</span>
+                        <span style={{ color: "#FF7A00" }}>DIO</span>
                         <span style={{ fontStyle: "italic", color: "black" }}>SHOPPING</span>
                     </Typography>
                 </Link>
@@ -112,9 +112,8 @@ const Cadastro = () => {
                 <Button
                     onClick={handleCadastro}
                     variant="contained"
-                    color="primary"
                     fullWidth
-                    style={{ height: "45px" }}
+                    style={{ height: "45px", background: "#FF7A00", color: "white" }}
                 >
                     Cadastrar
                 </Button>
@@ -122,7 +121,7 @@ const Cadastro = () => {
 
             <Typography style={{ marginTop: "20px" }}>
                 Já tem uma conta?{' '}
-                <Link to="/login" style={{ color: "blue", textDecoration: "none" }}>
+                <Link to="/login" style={{ color: "#FF7A00", textDecoration: "none" }}>
                     Fazer login
                 </Link>
             </Typography>

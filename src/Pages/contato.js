@@ -103,7 +103,7 @@ const Contatos = () => {
                         <TextField id="name" label="Nome" value={author} onChange={(event)=>{setAuthor(event.target.value)}} fullWidth/>
                         <TextField id="message" label="Mensagem" value={content} onChange={(event)=>{setContent(event.target.value)}} fullWidth/>
                     </div>
-                    <Button onClick={sendMessage} className="mt-2" variant="contained" color="primary" style={{height: "40px"}}>
+                    <Button onClick={sendMessage} className="mt-2" variant="contained" style={{height: "40px", background: "#FF7A00", color: "white"}}>
                         Enviar
                     </Button>
                 </div>

@@ -96,6 +96,4 @@ Este projeto foi construído passo a passo ao longo do bootcamp e serviu para co
 
 Chego ao fim do Bootcamp de Desenvolvimento FrontEnd do Banco Inter entregando não só um projeto, mas um pedaço de tudo que aprendi nessa jornada sobre React, TypeORM, autenticação, resolução de bugs de JavaScript às 2 da manhã, e a satisfação de ver cada peça se encaixar até se tornar algo funcional.
 
-Não foi por acaso que escolhi o laranja para vestir esse projeto do início ao fim. Cada tom de laranja espalhado pela interface carrega um significado que vai além da estética: é a forma que encontrei de dizer onde eu quero chegar. Trabalhei duro para simplificar ao máximo a vida dos usuários nesse sistema. Fiz isso com sangue laranja, porque o Banco Inter não é só a empresa que propôs esse desafio: é o lugar onde eu sonho em construir minha carreira.
-
-Esse projeto é a prova de que aprendizado e propósito podem caminhar juntos. Que ele seja o primeiro de muitos passos nessa direção, e que o laranja continue me guiando. 🧡
+Esse projeto é a prova de que aprendizado e propósito podem caminhar juntos. Que ele seja o primeiro de muitos passos nessa direção.🧡
